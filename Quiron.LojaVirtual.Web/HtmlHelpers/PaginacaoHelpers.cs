@@ -18,7 +18,7 @@ namespace Quiron.LojaVirtual.Web.HtmlHelpers
             {
                 StringBuilder resultado = new StringBuilder();
 
-                for (int i = 1; i < paginacao.PaginasTotal; i++)
+                for (int i = 1; i <= paginacao.PaginasTotal; i++)
                 {
                     TagBuilder tag = new TagBuilder("a");
                     tag.MergeAttribute("href", paginaUrl(i));
@@ -26,8 +26,8 @@ namespace Quiron.LojaVirtual.Web.HtmlHelpers
 
                     if (i == paginacao.PaginaAtual)
                     {
-                        tag.AddCssClass("btn btn-primary");
                         tag.AddCssClass("selected");
+                        tag.AddCssClass("btn btn-primary");
                     }
                     else
                     {
